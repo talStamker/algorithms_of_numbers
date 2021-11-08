@@ -1,29 +1,26 @@
 #include<stdio.h>
 #include "NumClass.h"
+int isPalindrom(int number,int Number,int rev){
 
+if(number==0){
+    if(Number==rev){
+    return 1;
+    }else{
+    return 0;
+    }
+}
+int reminder=number%10;
+rev=rev*10+reminder;
+return isPalindrom(number/10,Number,rev);
+
+}
 
 
 int isPalindrome(int num){
-    if (num<10&&num>=0)
-    {
-        return 1;
-    }
-    
-    int x=1;
-    for (int i = num; i > 10; i=i/10)
-    {
-        x=x*10;
-    }
-    if(num/x!=num%10){
-        return 0;
-    }
-    else{
-        num=num%x;
-        num=num/10;
-        return isPalindrome(num);
-    }
+return isPalindrom(num,num,0);
+ }
 
-}
+ 
 int isArmstrongfunc(int num,int count,int sum){
     if ((sum==0)&&(num<=0))
     {
@@ -43,7 +40,7 @@ int isArmstrongfunc(int num,int count,int sum){
             
         }
     }
-}
+ }
 int isArmstrong(int num){
     int count=0;
 
@@ -51,7 +48,6 @@ int isArmstrong(int num){
     {
         count++;
     }
-    return isArmstrongfunc(num,count,num);
-    
-    
+    return isArmstrongfunc(num,count,num);   
 }
+

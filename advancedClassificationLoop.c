@@ -30,32 +30,18 @@ int count=0,calcu=0,x,num2;
 }
 
 int isPalindrome(int num){
-    int count=0,x=1;
-    for (int i = num; i >0; i/=10)
-        {
-            count++;
-        }
-        if((count==1)||(count==0)){
-            return 1;
-        }
-        else{
-            for (int i = 0; i < count-1; i++)
-            {
-                x=x*10;
-            }
-            while (num>10)
-            {
-                if (num%10!=num/x)
-                {
-                    return 0;
-                }
-                num=num%x;
-                num=num/10;
-                x=x/10;                
-            }
-            
-            
-        }
-
+    int rev=0,reminder,Number=num;
+    while (num!=0)
+    {
+        reminder=num%10;
+        rev=rev*10+reminder;
+        num/=10;
+    }
+    if(Number==rev)
     return 1;
+    else
+    return 0;
+    
 }
+
+
