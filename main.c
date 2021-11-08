@@ -4,7 +4,7 @@ int main(){
     int x,y;
     scanf("%d",&x);
     scanf("%d",&y);
-    printf("The Armstrong numbers are:");
+    printf("\nThe Armstrong numbers are:");
     for (int i = x; i <= y; i++)
     {
         if (isArmstrong(i)==1)
